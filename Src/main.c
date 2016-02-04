@@ -33,6 +33,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
 #include "spi.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
@@ -43,7 +44,8 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+int32_t encoderTicks;
+int32_t dir;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -76,17 +78,24 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_SPI1_Init();
+  MX_TIM3_Init();
 
   /* USER CODE BEGIN 2 */
+	
+	HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	encoderTicks=0;
+	dir=0;
   while (1)
   {
-		HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_2);
-		HAL_Delay(100);
+//		HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_2);
+//		HAL_Delay(1);
+//		__HAL_TIM_SET_COUNTER(&htim3,encoderTicks);
+		encoderTicks =__HAL_TIM_GET_COUNTER(&htim3);
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */

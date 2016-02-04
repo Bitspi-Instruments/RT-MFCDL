@@ -29,3 +29,5 @@ rt-mfcdl configuration\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal
 rt-mfcdl configuration\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 rt-mfcdl configuration\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 rt-mfcdl configuration\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
+rt-mfcdl configuration\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+rt-mfcdl configuration\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
